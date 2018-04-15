@@ -1,0 +1,23 @@
+{
+  "name": "@isomorphic-git/openpgp-plugin",
+  "version": "0.0.0-development",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isomorphic-git/openpgp-plugin.git"
+  },
+  "keywords": ["isomorphic-git-plugin"],
+  "author": "William Hilton <wmhilton@gmail.com>",
+  "license": "LGPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/isomorphic-git/openpgp-plugin/issues"
+  },
+  "homepage": "https://github.com/isomorphic-git/openpgp-plugin#readme",
+  "dependencies": {
+    "openpgp": "3.0.4"
+  }
+}
