@@ -1,12 +1,18 @@
 const openpgp = require('openpgp')
 
+const toBinary = (data) => {
+  data = openpgp.util.encode_utf8(data)
+  data = openpgp.util.str_to_Uint8Array(data)
+  return data
+}
+
 module.exports.pgp = {
   async sign ({ payload, secretKey }) {
     // We need to use fromBinary because fromText screws with line endings
-    const message = openpgp.message.fromBinary(openpgp.util.encode_utf8(payload))
+    const data = toBinary(payload) //openpgp.util.encode_utf8(payload)
     const privateKeys = (await openpgp.key.readArmored(secretKey)).keys
     let { signature } = await openpgp.sign({
-      message,
+      data,
       privateKeys,
       detached: true,
       armor: true
@@ -14,7 +20,8 @@ module.exports.pgp = {
     return { signature }
   },
   async verify ({ payload, publicKey, signature }) {
-    const message = openpgp.message.fromBinary(openpgp.util.encode_utf8(payload))
+    const data = toBinary(payload)
+    const message = openpgp.message.fromBinary(data)
     signature = await openpgp.signature.readArmored(signature)
     const publicKeys = (await openpgp.key.readArmored(publicKey)).keys
     let { signatures } = await openpgp.verify({
