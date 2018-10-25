@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --ci --coverage"
+    "test": "jest --ci --coverage",
+    "semantic-release": "semantic-release"
   },
   "files": [
     "index.js"
