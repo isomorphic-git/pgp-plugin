@@ -1,4 +1,6 @@
 # @isomorphic-git/openpgp-plugin
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fisomorphic-git%2Fopenpgp-plugin.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fisomorphic-git%2Fopenpgp-plugin?ref=badge_shield)
+
 
 OpenPGP.js plugin for [a future version of] isomorphic-git
 
@@ -45,3 +47,6 @@ npm test
 
 In keeping with the OpenPGP.js license, this project is licensed under the
 GNU Lesser General Public License v3.0
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fisomorphic-git%2Fopenpgp-plugin.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fisomorphic-git%2Fopenpgp-plugin?ref=badge_large)
