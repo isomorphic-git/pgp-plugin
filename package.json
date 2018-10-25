@@ -25,6 +25,7 @@
   "devDependencies": {
     "crypto-random-string": "^1.0.0",
     "jest": "^23.6.0",
-    "jest-junit": "^5.2.0"
+    "jest-junit": "^5.2.0",
+    "semantic-release": "^15.10.5"
   }
 }
