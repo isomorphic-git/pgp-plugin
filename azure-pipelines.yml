@@ -14,7 +14,7 @@ jobs:
       versionSpec: '8.x'
     displayName: 'Install Node.js'
 
-  - script: npm ci
+  - script: npm install
     displayName: 'Install dependencies'
 
   - script: npm test
@@ -44,7 +44,7 @@ jobs:
     condition: succeededOrFailed()
     inputs:
       artifactName: 'npm-tarball.tgz'
-      PathtoPublish: '$(System.DefaultWorkingDirectory)/isomorphic-git-0.0.0-development.tgz'
+      PathtoPublish: '$(System.DefaultWorkingDirectory)/isomorphic-git-openpgp-plugin-0.0.0-development.tgz'
 
   - script: npm run semantic-release
     displayName: 'Publish to npm'
