@@ -1,7 +1,10 @@
 {
   "name": "@isomorphic-git/openpgp-plugin",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "scripts": {
     "test": "jest --ci --coverage",
