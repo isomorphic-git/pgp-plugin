@@ -1,4 +1,4 @@
 success:
   - '@semantic-release/github'
   - path: '@semantic-release/exec'
-    cmd: "node __tests__/__helpers__/tweet.js '@isomorphic-git/openpgp-plugin v${nextRelease.version} has been published! https://github.com/isomorphic-git/openpgp-plugin/releases/tag/v${nextRelease.version}'"
+    cmd: "node utils/tweet.js '@isomorphic-git/openpgp-plugin v${nextRelease.version} has been published! https://github.com/isomorphic-git/openpgp-plugin/releases/tag/v${nextRelease.version}'"
