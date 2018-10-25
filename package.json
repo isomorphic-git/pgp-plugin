@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/isomorphic-git/openpgp-plugin.git"
   },
-  "keywords": ["isomorphic-git-plugin"],
+  "keywords": [
+    "isomorphic-git-plugin"
+  ],
   "author": "William Hilton <wmhilton@gmail.com>",
   "license": "LGPL-3.0+",
   "bugs": {
@@ -18,6 +20,10 @@
   },
   "homepage": "https://github.com/isomorphic-git/openpgp-plugin#readme",
   "dependencies": {
-    "openpgp": "3.0.4"
+    "openpgp": "^4.1.2"
+  },
+  "devDependencies": {
+    "crypto-random-string": "^1.0.0",
+    "jest": "^23.6.0"
   }
 }
