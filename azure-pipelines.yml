@@ -44,7 +44,7 @@ jobs:
     condition: succeededOrFailed()
     inputs:
       artifactName: 'npm-tarball.tgz'
-      PathtoPublish: '$(System.DefaultWorkingDirectory)/isomorphic-git-openpgp-plugin-0.0.0-development.tgz'
+      PathtoPublish: '$(System.DefaultWorkingDirectory)/isomorphic-git-pgp-plugin-0.0.0-development.tgz'
 
   - script: npm run semantic-release
     displayName: 'Publish to npm'
