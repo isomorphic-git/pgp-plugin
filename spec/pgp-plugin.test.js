@@ -7,10 +7,17 @@ const cryptoRandomString = require('crypto-random-string')
 describe('sign & verify', async () => {
   it('simple "Hello world" test', async () => {
     let payload = 'Hello world'
-    let { signature } = await pgp.sign({ payload, secretKey })
-    // Because signatures contain a random element, we cannot use snapshot testing. :(
+    let timestamp = 1542908995
+    let { signature } = await pgp.sign({ payload, secretKey, timestamp })
     expect(signature).toEqual(
-      expect.stringContaining('-----BEGIN PGP SIGNATURE-----')
+      `-----BEGIN PGP SIGNATURE-----
+
+iJwEAAECAAYFAlv27EMACgkQ8vDO2KUmE8QZjwQAkioI4wRcO2LH6OE9VZeBXcQs
+Qd/NgxLImDHfT016sRNvrM6rPPva5GnW9M7CK+DkkCnIgDs1ezqwggxOI7LK7eQX
+m+sFhxJbZNNnaKCTvon4OdRn+/kWt5OBCOCt+p/BlUKKdlA0RJS97FdK44uabiYP
+SDgFnta7CCY2lcLhL2k=
+=MU4V
+-----END PGP SIGNATURE-----`
     )
     let { valid, invalid } = await pgp.verify({ payload, publicKey, signature })
     expect(valid).toEqual(['f2f0ced8a52613c4'])
@@ -56,9 +63,7 @@ describe('sign & verify', async () => {
     let payload = cryptoRandomString(5000)
     let { signature } = await pgp.sign({ payload, secretKey })
     // Because signatures contain a random element, we cannot use snapshot testing. :(
-    expect(signature).toEqual(
-      expect.stringContaining('-----BEGIN PGP SIGNATURE-----')
-    )
+    expect(signature.startsWith('-----BEGIN PGP SIGNATURE-----')).toBe(true);
     let { valid, invalid } = await pgp.verify({ payload, publicKey, signature })
     expect(valid).toEqual(['f2f0ced8a52613c4'])
     expect(invalid).toEqual([])

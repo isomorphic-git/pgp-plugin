@@ -2,8 +2,8 @@ const ipgp = require('@isomorphic-pgp/sign-and-verify')
 const { keyId } = require('@isomorphic-pgp/util/keyId')
 
 module.exports.pgp = {
-  async sign ({ payload, secretKey }) {
-    let signature = await ipgp.sign(secretKey, payload, Math.floor(Date.now() / 1000))
+  async sign ({ payload, secretKey, timestamp = Math.floor(Date.now() / 1000) }) {
+    let signature = await ipgp.sign(secretKey, payload, timestamp)
     return { signature }
   },
   async verify ({ payload, publicKey, signature }) {
