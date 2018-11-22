@@ -1,21 +1,25 @@
 {
   "name": "@isomorphic-git/pgp-plugin",
   "version": "0.0.0-development",
-  "description": "",
+  "description": "An isomorphic-pgp plugin for isomorphic-git",
   "publishConfig": {
     "access": "public"
   },
-  "main": "index.js",
+  "main": "src/index.js",
+  "browser": "dist/isomorphic-git-pgp-plugin.min.js",
   "scripts": {
+    "build": "webpack",
+    "prepublishOnly": "webpack",
     "test": "jest --ci --coverage",
     "semantic-release": "semantic-release"
   },
   "files": [
-    "index.js"
+    "src",
+    "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/isomorphic-git/openpgp-plugin.git"
+    "url": "git+https://github.com/isomorphic-git/pgp-plugin.git"
   },
   "keywords": [
     "isomorphic-git-plugin"
@@ -23,19 +27,28 @@
   "author": "William Hilton <wmhilton@gmail.com>",
   "license": "LGPL-3.0+",
   "bugs": {
-    "url": "https://github.com/isomorphic-git/openpgp-plugin/issues"
+    "url": "https://github.com/isomorphic-git/pgp-plugin/issues"
   },
-  "homepage": "https://github.com/isomorphic-git/openpgp-plugin#readme",
+  "homepage": "https://github.com/isomorphic-git/pgp-plugin#readme",
   "dependencies": {
-    "@isomorphic-pgp/sign-and-verify": "0.0.2",
-    "@isomorphic-pgp/util": "0.0.1"
+    "@isomorphic-pgp/sign-and-verify": "0.0.3",
+    "@isomorphic-pgp/util": "0.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-transform-async-to-generator": "^7.1.0",
+    "@babel/preset-env": "^7.1.6",
     "@semantic-release/exec": "3.3.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.4",
     "crypto-random-string": "1.0.0",
+    "duplicate-package-checker-webpack-plugin": "^3.0.0",
     "jest": "23.6.0",
     "jest-junit": "5.2.0",
     "semantic-release": "15.10.5",
-    "tweet-tweet": "1.0.4"
+    "tweet-tweet": "1.0.4",
+    "webpack": "^4.26.0",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2"
   }
 }
