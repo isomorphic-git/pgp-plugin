@@ -12,11 +12,11 @@ describe('sign & verify', async () => {
     expect(signature).toEqual(
       `-----BEGIN PGP SIGNATURE-----
 
-iJwEAAECAAYFAlv27EMACgkQ8vDO2KUmE8QZjwQAkioI4wRcO2LH6OE9VZeBXcQs
-Qd/NgxLImDHfT016sRNvrM6rPPva5GnW9M7CK+DkkCnIgDs1ezqwggxOI7LK7eQX
-m+sFhxJbZNNnaKCTvon4OdRn+/kWt5OBCOCt+p/BlUKKdlA0RJS97FdK44uabiYP
-SDgFnta7CCY2lcLhL2k=
-=MU4V
+iJwEAAEIAAYFAlv27EMACgkQ8vDO2KUmE8S4FwQAmxiQD27P4Nm3lHM3XrPqb2RR
+nWj26Qo5nlhdpg482cxba3Z5Kf/zQROJhz0uJu8LVVPYyqMJw3NUcCYcfpYYw6NT
+5HYsDpPPPgYcxcjP+6/VaS5rm1sG0efd3cGNsi392rKsKqKYnaEV9LJFUHaiCBEQ
+KKpy9lbjLXPgBcRiXgA=
+=dQsk
 -----END PGP SIGNATURE-----`
     )
     let { valid, invalid } = await pgp.verify({ payload, publicKey, signature })
