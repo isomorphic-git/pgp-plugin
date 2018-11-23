@@ -4,7 +4,7 @@ const { secretKey, publicKey } = require('./__helpers__/keys.js')
 
 const cryptoRandomString = require('crypto-random-string')
 
-describe('sign & verify', async () => {
+describe('sign & verify', () => {
   it('simple "Hello world" test', async () => {
     let payload = 'Hello world'
     let timestamp = 1542908995
