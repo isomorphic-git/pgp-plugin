@@ -1,6 +1,6 @@
 {
   "name": "@isomorphic-git/pgp-plugin",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "An isomorphic-pgp plugin for isomorphic-git",
   "publishConfig": {
     "access": "public"
@@ -31,8 +31,8 @@
   },
   "homepage": "https://github.com/isomorphic-git/pgp-plugin#readme",
   "dependencies": {
-    "@isomorphic-pgp/sign-and-verify": "^0.0.7",
-    "@isomorphic-pgp/util": "^0.0.4"
+    "@isomorphic-pgp/sign-and-verify": "^0.0.8",
+    "@isomorphic-pgp/util": "^0.0.5"
   },
   "devDependencies": {
     "@semantic-release/exec": "3.3.0",
